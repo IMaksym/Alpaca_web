@@ -3,283 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kosmiczne Alpaki i Ceramika</title>
+    <title>Alpaki i Ceramika</title>
     <style>
+        /* === Базовые стили === */
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            color: #ffffff;
+            background: linear-gradient(to bottom, #fff8e1, #ffecd2);
             overflow-x: hidden;
-            background: linear-gradient(135deg, #1e3c72, #2a5298, #0f2027);
-            background-attachment: fixed;
         }
 
         h1, h2, h3 {
-            font-weight: bold;
             text-align: center;
-            text-transform: uppercase;
+            color: #5D4037;
+            animation: fadeInUp 1s ease-out;
         }
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin: 2rem 0;
-            background: linear-gradient(90deg, #ffdd59, #ff7e5f, #feb47b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textGlow 3s infinite alternate;
-        }
-
-        @keyframes textGlow {
-            0% {
-                text-shadow: 0 0 10px #ff7e5f, 0 0 20px #ff7e5f, 0 0 30px #feb47b;
-            }
-            100% {
-                text-shadow: 0 0 30px #ff7e5f, 0 0 60px #feb47b, 0 0 90px #ffdd59;
-            }
+            animation: fadeInDown 1.5s ease-out;
         }
 
         h2 {
-            margin: 1.5rem 0;
             font-size: 2.5rem;
+            margin: 1.5rem 0;
+            text-transform: uppercase;
+            position: relative;
         }
 
-        p, a {
+        h2:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #FF7043;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        p {
             font-size: 1.2rem;
             line-height: 1.8;
-            text-align: center;
+            color: #795548;
+            margin: 1rem 0;
+            opacity: 0;
+            animation: fadeInUp 2s forwards;
         }
 
-        a {
-            color: #ffdd59;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: #feb47b;
-        }
-
-        #particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        nav a {
-            margin: 0 1rem;
-            font-size: 1.2rem;
-            color: #ffffff;
-            transition: transform 0.3s, color 0.3s;
-        }
-
-        nav a:hover {
-            color: #ff7e5f;
-            transform: scale(1.2);
-        }
-
-        section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .section-bg {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-            padding: 2rem;
-            margin-top: 2rem;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            0% {
+        /* === Анимации === */
+        @keyframes fadeInDown {
+            from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(-50px);
             }
-            100% {
+            to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        .alpaca {
-            position: absolute;
-            bottom: -10px;
-            width: 150px;
-            animation: float 8s infinite ease-in-out;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .alpaca-left {
-            left: -100px;
+        @keyframes slideIn {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100px;
+            }
         }
 
-        .alpaca-right {
-            right: -100px;
-        }
-
-        @keyframes float {
+        @keyframes bounce {
             0%, 100% {
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-20px);
+                transform: translateY(-15px);
             }
         }
 
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: #79493a;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 2s ease-out;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+            color: #FFE0B2;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(to bottom, #ffccbc, #ff8a65);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin: 2rem auto;
+            opacity: 0;
+            animation: fadeInUp 2s forwards;
+        }
+
+        .alpaca-animation {
+            width: 200px;
+            animation: bounce 2s infinite;
+            margin: 1rem auto;
+        }
+
+        .ceramics-animation {
+            width: 150px;
+            animation: float 4s infinite ease-in-out;
+        }
+
+        .about-bg {
+            background: #FFCCBC;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-top: 2rem;
+            color: #3E2723;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }  
+
         .btn {
             display: inline-block;
-            margin: 2rem auto;
+            margin-top: 2rem;
             padding: 1rem 2rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-transform: uppercase;
             color: #fff;
-            background: linear-gradient(90deg, #ff7e5f, #feb47b);
-            border: none;
-            border-radius: 50px;
+            background: #5D4037;
+            text-transform: uppercase;
             text-decoration: none;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, background 0.3s;
         }
 
         .btn:hover {
+            background: #8D6E63;
             transform: scale(1.1);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
         }
 
         footer {
-            text-align: center;
             padding: 2rem;
-            background: #0f2027;
-            color: #ffffff;
+            background: #5D4037;
+            color: #fff;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
         }
     </style>
 </head>
 <body>
-    <canvas id="particles"></canvas>
-
-    <header>
-        <h1>Kosmiczne Alpaki i Ceramika</h1>
-        <p>Unikalne doświadczenia w kosmicznym świecie ceramiki i alpak.</p>
-    </header>
-
     <nav>
         <a href="#about">O nas</a>
-        <a href="#services">Usługi</a>
+        <a href="#ceramics">Ceramika</a>
+        <a href="#alpacas">Alpaki</a>
         <a href="#contact">Kontakt</a>
     </nav>
 
+    <header>
+        <h1>Pracownia Ceramiki Artystycznej Majolika
+            <p>Przystanek Alpaki i inne Zwierzaki w Koziegłowach</p>
+        </h1>
+        <div class="about-bg">
+            <p>Tworzymy z miłością: unikalne produkty ceramiczne i niezapomniane chwile z alpakami.</p>
+        </div>
+    </header>
+
     <section id="about">
         <h2>O nas</h2>
-        <div class="section-bg">
-            <p>Witaj w kosmicznej krainie ceramiki i alpak. Nasze studio łączy pasję do sztuki z miłością do tych niezwykłych zwierząt.</p>
+        <div class="about-bg">
+            <p>W naszym studio ceramiki łączymy tradycyjne rzemiosło z nowoczesnym designem, a nasze alpaki sprawiają, że każde spotkanie jest magiczne.</p>
         </div>
     </section>
 
-    <section id="services">
-        <h2>Nasze Usługi</h2>
-        <div class="section-bg">
-            <ul>
-                <li>Warsztaty ceramiczne</li>
-                <li>Spotkania z alpakami</li>
-                <li>Sprzedaż unikalnych wyrobów ceramicznych</li>
-            </ul>
-            <a href="#contact" class="btn">Zarezerwuj Wizytę</a>
+    <section id="ceramics">
+        <h2>Ceramika</h2>
+        <div class="about-bg">
+            <p>Oferujemy ręcznie robione produkty ceramiczne: od pięknych kubków po dekoracyjne wazony.</p>
+        </div>
+    </section>
+
+    <section id="alpacas">
+        <h2>Alpaki</h2>
+        <div class="about-bg">
+            <p>Zapraszamy na spotkania z naszymi uroczymi alpakami. Odwiedź nas, by zrelaksować się w ich towarzystwie.</p>
+            <img src="drawable/alpaca_icon.svg" alt="Alpaka" class="alpaca-animation">
         </div>
     </section>
 
     <section id="contact">
         <h2>Kontakt</h2>
-        <div class="section-bg">
+        <div class="about-bg">
             <p>Adres: Gęzyńska 16, 42-350 Koziegłowy</p>
             <p>Email: <a href="mailto:kontakt@alpaki.pl">kontakt@alpaki.pl</a></p>
             <p>Telefon: +48 123 456 789</p>
-        </div>
+        </div>  
     </section>
 
     <footer>
-        <p>&copy; 2024 Kosmiczne Alpaki i Ceramika. Wszystkie prawa zastrzeżone.</p>
+        <p>&copy; 2024 Alpaki i Ceramika. Wszystkie prawa zastrzeżone.</p>
     </footer>
-
-    <script>
-        const canvas = document.getElementById('particles');
-        const ctx = canvas.getContext('2d');
-        let particlesArray = [];
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 3 - 1.5;
-                this.speedY = Math.random() * 3 - 1.5;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.size > 0.2) this.size -= 0.1;
-            }
-            draw() {
-                ctx.fillStyle = 'rgba(255,255,255,0.8)';
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.closePath();
-                ctx.fill();
-            }
-        }
-
-        function init() {
-            for (let i = 0; i < 100; i++) {
-                particlesArray.push(new Particle());
-            }
-        }
-
-        function handleParticles() {
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-                if (particlesArray[i].size <= 0.3) {
-                    particlesArray.splice(i, 1);
-                    i--;
-                }
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            handleParticles();
-            requestAnimationFrame(animate);
-        }
-
-        init();
-        animate();
-
-        window.addEventListener('resize', function () {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            init();
-        });
-    </script>
 </body>
 </html>
