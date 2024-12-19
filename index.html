@@ -26,7 +26,7 @@
 
         header {
             text-align: center;
-            padding: 6rem 2rem;
+            padding: 4rem 1rem;
             background: linear-gradient(90deg, #8e44ad, #3498db);
             color: white;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -47,12 +47,14 @@
         }
 
         header h1 {
-            white-space: normal; 
-            word-wrap: break-word; 
-            font-size: 4rem;
+            font-size: 3rem;
             margin: 0;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             animation: pulse 5s infinite;
+            word-wrap: break-word;
+            white-space: normal;
+            max-width: 90%;
+            margin: 0 auto;
         }
 
         @keyframes pulse {
@@ -65,7 +67,7 @@
         }
 
         header p {
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             margin: 0;
             margin-top: 1rem;
             text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
@@ -155,42 +157,24 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .card p, .card ul {
-            animation: slideIn 1s;
-        }
-
-        @keyframes slideIn {
-            0% {
-                opacity: 0;
-                transform: translateX(-20px);
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+                line-height: 1.2;
             }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
 
-        .alpaca {
-            position: absolute;
-            top: 10px;
-            left: -150px;
-            width: 100px;
-            animation: runAcross 10s linear infinite;
-        }
-
-        @keyframes runAcross {
-            0% {
-                left: -150px;
+            header {
+                padding: 3rem 1rem;
             }
-            100% {
-                left: 100%;
+
+            header p {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="drawable/alpaca_icon.svg" alt="Alpaca" class="alpaca">
         <h1>Pracownia Ceramiki Artystycznej Majolika</h1>
         <p>Przystanek Alpaki i inne Zwierzaki w Koziegłowach</p>
     </header>
