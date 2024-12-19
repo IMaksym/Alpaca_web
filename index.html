@@ -3,103 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strona Gospodarstwa</title>
+    <title>Pracownia Ceramiki i Alpaki</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
-            color: #333;
+            background: linear-gradient(135deg, #f8efd4, #d1c4e9);
+            color: #444;
+            overflow-x: hidden;
+            animation: backgroundShift 10s infinite alternate;
+        }
+
+        @keyframes backgroundShift {
+            0% {
+                background: linear-gradient(135deg, #f8efd4, #d1c4e9);
+            }
+            100% {
+                background: linear-gradient(135deg, #d1c4e9, #f8efd4);
+            }
         }
 
         header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
             text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(90deg, #8e44ad, #3498db);
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 3s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            animation: pulse 5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        header p {
+            font-size: 1.7rem;
+            margin: 0;
+            margin-top: 1rem;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
         }
 
         nav {
             display: flex;
             justify-content: center;
-            background: #444;
-            padding: 0.5rem;
+            background: #6c5ce7;
+            padding: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-            nav a {
-                color: #fff;
-                text-decoration: none;
-                margin: 0 1rem;
-            }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.2rem;
+            transition: transform 0.3s, color 0.3s;
+        }
 
-                nav a:hover {
-                    text-decoration: underline;
-                }
+        nav a:hover {
+            transform: scale(1.2);
+            color: #f8efd4;
+        }
 
         section {
-            padding: 2rem;
+            padding: 4rem 1.5rem;
             margin: auto;
-            max-width: 800px;
+            max-width: 1000px;
+            text-align: center;
         }
 
         .card {
-            background: #fff;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background: white;
+            padding: 2rem;
+            margin: 2rem auto;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
 
         footer {
             text-align: center;
-            padding: 1rem;
-            background: #333;
-            color: #fff;
+            padding: 2rem;
+            background: #2c3e50;
+            color: white;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 1rem auto;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            color: white;
+            background: linear-gradient(90deg, #e74c3c, #e67e22);
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+            }
+            100% {
+                box-shadow: 0 4px 12px rgba(255, 255, 255, 0.6);
+            }
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card p, .card ul {
+            animation: slideIn 1s;
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .alpaca {
+            position: absolute;
+            top: 10px;
+            left: -150px;
+            width: 100px;
+            animation: runAcross 10s linear infinite;
+        }
+
+        @keyframes runAcross {
+            0% {
+                left: -150px;
+            }
+            100% {
+                left: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Gospodarstwo</h1>
-        <p>Źródło informacji o naszej działalności</p>
+        <img src="drawable/alpaca_icon.svg" alt="Alpaca" class="alpaca">
+        <h1>Pracownia Ceramiki Artystycznej Majolika</h1>
+        <p>Przystanek Alpaki i inne Zwierzaki w Koziegłowach</p>
     </header>
 
     <nav>
         <a href="#about">O nas</a>
-        <a href="#services">Usługi i cennik</a>
+        <a href="#services">Nasze usługi</a>
         <a href="#contact">Kontakt</a>
     </nav>
 
     <section id="about">
         <h2>O nas</h2>
         <div class="card">
-            <p>Tworzymy stronę internetową, która będzie źródłem informacji na temat przedsiębiorstwa w przestrzeni internetowej. Na ten moment gospodarstwo prowadzi jedynie fanpage na Facebooku, gdzie stale informacje nie są łatwo widoczne.</p>
+            <p>Witaj w naszej pracowni! Tworzymy ceramikę artystyczną i prowadzimy gospodarstwo z alpakami oraz innymi zwierzętami. To miejsce, gdzie natura spotyka się ze sztuką, oferując niepowtarzalne doświadczenia.</p>
         </div>
     </section>
 
     <section id="services">
-        <h2>Usługi i cennik</h2>
+        <h2>Nasze usługi</h2>
         <div class="card">
-            <p>Nasze usługi obejmują:</p>
             <ul>
-                <li>Oferta 1 - 100 PLN</li>
-                <li>Oferta 2 - 200 PLN</li>
-                <li>Oferta 3 - 300 PLN</li>
+                <li>Warsztaty ceramiczne dla dzieci i dorosłych</li>
+                <li>Spotkania z alpakami i zwierzętami</li>
+                <li>Sprzedaż unikatowych wyrobów ceramicznych</li>
             </ul>
+            <a href="#contact" class="btn">Zarezerwuj wizytę</a>
         </div>
     </section>
 
     <section id="contact">
         <h2>Kontakt</h2>
         <div class="card">
-            <p>Prosimy o kontakt pod adresem email: <a href="mailto:kontakt@przyklad.pl">kontakt@przyklad.pl</a></p>
+            <p>Adres: Gęzyńska 16, 42-350 Koziegłowy</p>
+            <p>Email: <a href="mailto:kontakt@majolika.pl">kontakt@majolika.pl</a></p>
             <p>Telefon: +48 123 456 789</p>
+            <a href="#services" class="btn">Odwiedź nas</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Gospodarstwo. Wszystkie prawa zastrzeżone.</p>
+        <p>&copy; 2024 Pracownia Ceramiki i Przystanek Alpaki. Wszystkie prawa zastrzeżone.</p>
     </footer>
 </body>
 </html>
