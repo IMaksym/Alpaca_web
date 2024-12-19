@@ -1,13 +1,105 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpaca Web</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Strona Gospodarstwa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
+            padding: 0.5rem;
+        }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 1rem;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+
+        section {
+            padding: 2rem;
+            margin: auto;
+            max-width: 800px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    <h1>Добро пожаловать в Alpaca Web</h1>
-    <p>Это пример сайта, размещённого через GitHub Pages.</p>
+    <header>
+        <h1>Gospodarstwo</h1>
+        <p>Źródło informacji o naszej działalności</p>
+    </header>
+
+    <nav>
+        <a href="#about">O nas</a>
+        <a href="#services">Usługi i cennik</a>
+        <a href="#contact">Kontakt</a>
+    </nav>
+
+    <section id="about">
+        <h2>O nas</h2>
+        <div class="card">
+            <p>Tworzymy stronę internetową, która będzie źródłem informacji na temat przedsiębiorstwa w przestrzeni internetowej. Na ten moment gospodarstwo prowadzi jedynie fanpage na Facebooku, gdzie stale informacje nie są łatwo widoczne.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Usługi i cennik</h2>
+        <div class="card">
+            <p>Nasze usługi obejmują:</p>
+            <ul>
+                <li>Oferta 1 - 100 PLN</li>
+                <li>Oferta 2 - 200 PLN</li>
+                <li>Oferta 3 - 300 PLN</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <div class="card">
+            <p>Prosimy o kontakt pod adresem email: <a href="mailto:kontakt@przyklad.pl">kontakt@przyklad.pl</a></p>
+            <p>Telefon: +48 123 456 789</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gospodarstwo. Wszystkie prawa zastrzeżone.</p>
+    </footer>
 </body>
 </html>
