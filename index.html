@@ -3,236 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pracownia Ceramiki i Alpaki</title>
+    <title>Kosmiczne Alpaki i Ceramika</title>
     <style>
-        /* Общие стили */
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            background: radial-gradient(circle, #1e3c72, #2a5298, #0f2027);
-            background-attachment: fixed;
             color: #ffffff;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #1e3c72, #2a5298, #0f2027);
+            background-attachment: fixed;
         }
 
         h1, h2, h3 {
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 2rem 0;
+            background: linear-gradient(90deg, #ffdd59, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 3s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 10px #ff7e5f, 0 0 20px #ff7e5f, 0 0 30px #feb47b;
+            }
+            100% {
+                text-shadow: 0 0 30px #ff7e5f, 0 0 60px #feb47b, 0 0 90px #ffdd59;
+            }
+        }
+
+        h2 {
+            margin: 1.5rem 0;
+            font-size: 2.5rem;
         }
 
         p, a {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
         }
 
-        /* Динамический фон */
-        body::before {
-            content: '';
+        a {
+            color: #ffdd59;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #feb47b;
+        }
+
+        #particles {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https://via.placeholder.com/1920x1080') no-repeat center/cover;
-            filter: blur(8px) brightness(0.4);
             z-index: -1;
         }
 
-        /* Навигация */
         nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem 2rem;
-            background: rgba(0, 0, 0, 0.5);
             position: sticky;
             top: 0;
             z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1.5rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            color: #ffffff;
             transition: transform 0.3s, color 0.3s;
         }
 
         nav a:hover {
+            color: #ff7e5f;
             transform: scale(1.2);
-            color: #ffdd59;
         }
 
-        /* Заголовок */
-        header {
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: auto;
             text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.9), rgba(15, 32, 39, 0.9));
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
-        header h1 {
-            font-size: 4rem;
-            margin: 0;
-            animation: glow 3s ease-in-out infinite alternate;
+        .section-bg {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            padding: 2rem;
+            margin-top: 2rem;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        header p {
-            font-size: 1.8rem;
-            margin-top: 1rem;
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        @keyframes glow {
-            from { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
-            to { text-shadow: 0 0 40px rgba(255, 255, 255, 1); }
-        }
-
-        /* Альпаки */
         .alpaca {
             position: absolute;
             bottom: -10px;
-            left: -200px;
             width: 150px;
-            animation: runAcross 10s linear infinite;
+            animation: float 8s infinite ease-in-out;
         }
 
-        @keyframes runAcross {
-            0% { left: -200px; transform: scale(0.8); }
-            50% { transform: scale(1); }
-            100% { left: 110%; transform: scale(0.8); }
+        .alpaca-left {
+            left: -100px;
         }
 
-        /* Основные секции */
-        section {
-            padding: 4rem 2rem;
-            margin: auto;
-            max-width: 1200px;
-            text-align: center;
+        .alpaca-right {
+            right: -100px;
         }
 
-        section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            margin: 2rem auto;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Параллакс-эффекты */
-        .parallax {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .parallax img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: auto;
-            animation: moveBackground 20s linear infinite;
-        }
-
-        @keyframes moveBackground {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-100%); }
-        }
-
-        /* Кнопки */
         .btn {
             display: inline-block;
-            margin: 1.5rem auto 0;
-            padding: 1rem 2.5rem;
-            font-size: 1.3rem;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
             font-weight: bold;
-            color: white;
+            text-transform: uppercase;
+            color: #fff;
             background: linear-gradient(90deg, #ff7e5f, #feb47b);
             border: none;
-            border-radius: 30px;
+            border-radius: 50px;
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .btn:hover {
             transform: scale(1.1);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Контакты */
-        #contact {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 3rem 2rem;
-            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
         }
 
         footer {
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            margin-top: 4rem;
+            background: #0f2027;
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
+    <canvas id="particles"></canvas>
+
     <header>
-        <h1>Pracownia Ceramiki i Alpaki</h1>
-        <p>Przystanek Alpaki i inne Zwierzaki</p>
-        <img src="drawable/alpaca_icon.svg" alt="Biegnąca Alpaka" class="alpaca">
+        <h1>Kosmiczne Alpaki i Ceramika</h1>
+        <p>Unikalne doświadczenia w kosmicznym świecie ceramiki i alpak.</p>
     </header>
 
     <nav>
         <a href="#about">O nas</a>
-        <a href="#services">Nasze usługi</a>
+        <a href="#services">Usługi</a>
         <a href="#contact">Kontakt</a>
     </nav>
 
     <section id="about">
         <h2>O nas</h2>
-        <div class="card">
-            <p>Witaj w naszej pracowni! Tworzymy ceramikę artystyczną i prowadzimy gospodarstwo z alpakami oraz innymi zwierzętami. To miejsce, gdzie natura spotyka się ze sztuką.</p>
+        <div class="section-bg">
+            <p>Witaj w kosmicznej krainie ceramiki i alpak. Nasze studio łączy pasję do sztuki z miłością do tych niezwykłych zwierząt.</p>
         </div>
     </section>
 
     <section id="services">
-        <h2>Nasze usługi</h2>
-        <div class="card">
+        <h2>Nasze Usługi</h2>
+        <div class="section-bg">
             <ul>
                 <li>Warsztaty ceramiczne</li>
                 <li>Spotkania z alpakami</li>
-                <li>Sprzedaż unikatowych wyrobów ceramicznych</li>
+                <li>Sprzedaż unikalnych wyrobów ceramicznych</li>
             </ul>
-            <a href="#contact" class="btn">Zarezerwuj wizytę</a>
+            <a href="#contact" class="btn">Zarezerwuj Wizytę</a>
         </div>
     </section>
 
     <section id="contact">
         <h2>Kontakt</h2>
-        <div class="card">
+        <div class="section-bg">
             <p>Adres: Gęzyńska 16, 42-350 Koziegłowy</p>
-            <p>Email: <a href="mailto:kontakt@majolika.pl">kontakt@majolika.pl</a></p>
+            <p>Email: <a href="mailto:kontakt@alpaki.pl">kontakt@alpaki.pl</a></p>
             <p>Telefon: +48 123 456 789</p>
-            <a href="#services" class="btn">Odwiedź nas</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Pracownia Ceramiki i Alpaki. Wszystkie prawa zastrzeżone.</p>
+        <p>&copy; 2024 Kosmiczne Alpaki i Ceramika. Wszystkie prawa zastrzeżone.</p>
     </footer>
+
+    <script>
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        let particlesArray = [];
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 3 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(255,255,255,0.8)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < 100; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function handleParticles() {
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+                if (particlesArray[i].size <= 0.3) {
+                    particlesArray.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            handleParticles();
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        window.addEventListener('resize', function () {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+    </script>
 </body>
 </html>
