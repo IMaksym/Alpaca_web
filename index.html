@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpaki i Ceramika</title>
     <style>
-        body {
-            margin: 0;
-            font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(to bottom, #8ecae6, #219ebc, #023047);
-            overflow-x: hidden;
-            color: #fff7ef;
-        }
+  body {
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(to bottom, #8ecae6, #219ebc, #023047);
+    overflow-x: hidden;
+    color: #fff7ef;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Убедитесь, что тело страницы всегда растягивается на всю высоту экрана */
+}
 
         h1, h2 {
             text-align: center;
@@ -95,18 +98,20 @@
         }
 
         .tab-content {
-            padding: 3rem 2rem;
-            background: #219ebc;
-            border-radius: 15px;
-            margin: 2rem auto;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            animation: fadeIn 2s forwards;
-        }
+    padding: 3rem 3rem;
+    background: #219ebc;
+    border-radius: 15px;
+    margin: auto auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s forwards;
+    margin-bottom: 50px; /* Отступ снизу */
+}
+
 
         .btn {
             display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
+            margin-top: 20rem;
+            padding: 100rem 2rem;
             color: #fff;
             background: #fb8500;
             text-transform: uppercase;
@@ -122,14 +127,14 @@
         }
 
         footer {
-            padding: 2rem;
-            background: #023047;
-            color: #fff7ef;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
+            
+    padding: 1rem auto;
+    background: #023047;
+    color: #fff7ef;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; /* Это гарантирует, что футер будет всегда внизу */
+}
 
         .main-image {
             max-width: 100%;
@@ -217,7 +222,6 @@
 
                 <img src="drawable/Alpaki.jpg" alt="Afisz wydarzenia" class="main-image">
 
-                <p>Dołącz do nas i poznaj świat alpak oraz ceramiki!@</p>
             </div>
         </div>
 
@@ -248,7 +252,7 @@
 
     <footer>
         <p class="center"
-        >&copy; 2024 Alpaki i Ceramika. </p>
+        >&copy; Majolika </p>
     </footer>
 
     <script>
