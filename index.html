@@ -5,70 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpaki i Ceramika</title>
     <style>
-        /* === Базовые стили === */
         body {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to bottom, #fff8e1, #ffecd2);
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to bottom, #8ecae6, #219ebc, #023047);
             overflow-x: hidden;
+            color: #fff7ef;
         }
 
-        h1, h2, h3 {
+        h1, h2 {
             text-align: center;
-            color: #5D4037;
-            animation: fadeInUp 1s ease-out;
+            animation: fadeIn 1.5s ease-out;
         }
 
         h1 {
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             margin: 2rem 0;
-            animation: fadeInDown 1.5s ease-out;
+            color: #fb8500;
         }
 
         h2 {
-            font-size: 2.5rem;
-            margin: 1.5rem 0;
-            text-transform: uppercase;
+            font-size: 3rem;
+            margin: 1rem 0;
             position: relative;
         }
 
-        h2:after {
-            content: "";
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: #FF7043;
-            animation: slideIn 1s ease-in-out;
-        }
-
         p {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             line-height: 1.8;
-            color: #795548;
-            margin: 1rem 0;
-            opacity: 0;
-            animation: fadeInUp 2s forwards;
+            color: #fff7ef;
+            text-align: justify;
         }
 
-        /* === Анимации === */
-        @keyframes fadeInDown {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
@@ -78,98 +50,64 @@
 
         @keyframes slideIn {
             from {
-                width: 0;
+                transform: translateX(-100%);
             }
             to {
-                width: 100px;
-            }
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0);
+                transform: translateX(0);
             }
         }
 
         nav {
             position: sticky;
             top: 0;
-            background: #79493a;
-            padding: 1rem;
+            background: #023047;
+            padding: 1rem 0;
             display: flex;
             justify-content: center;
-            z-index: 1000;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            animation: fadeInDown 2s ease-out;
+            z-index: 1000;
+            animation: slideIn 1s ease-out;
         }
 
         nav a {
-            color: #ffffff;
+            color: #fff7ef;
             text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.2rem;
-            transition: transform 0.3s, color 0.3s;
+            margin: 0 1.5rem;
+            font-size: 1.3rem;
+            transition: color 0.3s, transform 0.3s;
         }
 
         nav a:hover {
+            color: #fb8500;
             transform: scale(1.1);
-            color: #FFE0B2;
         }
 
-        section {
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            background: linear-gradient(to bottom, #ffccbc, #ff8a65);
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            margin: 2rem auto;
+        .tab {
+            display: none;
             opacity: 0;
-            animation: fadeInUp 2s forwards;
+            transition: opacity 0.5s ease;
         }
 
-        .alpaca-animation {
-            width: 200px;
-            animation: bounce 2s infinite;
-            margin: 1rem auto;
+        .tab.active {
+            display: block;
+            opacity: 1;
         }
 
-        .ceramics-animation {
-            width: 150px;
-            animation: float 4s infinite ease-in-out;
-        }
-
-        .about-bg {
-            background: #FFCCBC;
+        .tab-content {
+            padding: 3rem 2rem;
+            background: #219ebc;
             border-radius: 15px;
-            padding: 2rem;
-            margin-top: 2rem;
-            color: #3E2723;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }  
+            margin: 2rem auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s forwards;
+        }
 
         .btn {
             display: inline-block;
             margin-top: 2rem;
             padding: 1rem 2rem;
             color: #fff;
-            background: #5D4037;
+            background: #fb8500;
             text-transform: uppercase;
             text-decoration: none;
             border-radius: 50px;
@@ -178,69 +116,153 @@
         }
 
         .btn:hover {
-            background: #8D6E63;
+            background: #ffb703;
             transform: scale(1.1);
         }
 
         footer {
             padding: 2rem;
-            background: #5D4037;
-            color: #fff;
+            background: #023047;
+            color: #fff7ef;
             text-align: center;
-            animation: fadeInUp 1s ease-out;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
+
+        .main-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            margin: 2rem auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
+            nav a {
+                font-size: 1.1rem;
+                margin: 0 1rem;
+            }
+
+            .tab-content {
+                padding: 2rem 1rem;
+            }
+
+            footer {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                padding: 0.5rem 0;
+            }
+
+            nav a {
+                font-size: 1rem;
+                margin: 0.5rem 0.8rem;
+            }
+
+            .tab-content {
+                padding: 1.5rem 1rem;
+            }
+            .center {
+                text-align: center;
+            }
+        }
+        
+
     </style>
 </head>
 <body>
     <nav>
-        <a href="#about">O nas</a>
-        <a href="#ceramics">Ceramika</a>
-        <a href="#alpacas">Alpaki</a>
-        <a href="#contact">Kontakt</a>
+        <a href="#" onclick="showTab(0)">O nas</a>
+        <a href="#" onclick="showTab(1)">Ceramika</a>
+        <a href="#" onclick="showTab(2)">Alpaki</a>
+        <a href="#" onclick="showTab(3)">Kontakt</a>
     </nav>
 
-    <header>
-        <h1>Pracownia Ceramiki Artystycznej Majolika
-            <p>Przystanek Alpaki i inne Zwierzaki w Koziegłowach</p>
-        </h1>
-        <div class="about-bg">
-            <p>Tworzymy z miłością: unikalne produkty ceramiczne i niezapomniane chwile z alpakami.</p>
-        </div>
-    </header>
+    <div id="tabs">
+        <div class="tab active">
+            <div class="tab-content">
+                <h2>O nas</h2>
+                <p>Tworzymy z pasją unikalne produkty ceramiczne oraz niezapomniane chwile spędzone w towarzystwie naszych uroczych alpak. Nasze miejsce to oaza spokoju i kreatywności, gdzie każdy znajdzie coś dla siebie.</p>
 
-    <section id="about">
-        <h2>O nas</h2>
-        <div class="about-bg">
-            <p>W naszym studio ceramiki łączymy tradycyjne rzemiosło z nowoczesnym designem, a nasze alpaki sprawiają, że każde spotkanie jest magiczne.</p>
-        </div>
-    </section>
+                <img src="drawable/Alpaki.jpg" alt="Afisz wydarzenia" class="main-image">
 
-    <section id="ceramics">
-        <h2>Ceramika</h2>
-        <div class="about-bg">
-            <p>Oferujemy ręcznie robione produkty ceramiczne: od pięknych kubków po dekoracyjne wazony.</p>
+                <p>Dołącz do nas i poznaj świat alpak oraz ceramiki!</p>
+            </div>
         </div>
-    </section>
 
-    <section id="alpacas">
-        <h2>Alpaki</h2>
-        <div class="about-bg">
-            <p>Zapraszamy na spotkania z naszymi uroczymi alpakami. Odwiedź nas, by zrelaksować się w ich towarzystwie.</p>
-            <img src="drawable/alpaca_icon.svg" alt="Alpaka" class="alpaca-animation">
+        <div class="tab">
+            <div class="tab-content">
+                <h2>Ceramika</h2>
+                <p>Nasze produkty ceramiczne są tworzone ręcznie z najwyższą dbałością o szczegóły. Oferujemy szeroką gamę wyrobów: od praktycznych kubków i talerzy, po dekoracyjne wazony i figurki, które wprowadzą do każdego wnętrza niepowtarzalny klimat.</p>
+            </div>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>Kontakt</h2>
-        <div class="about-bg">
-            <p>Adres: Gęzyńska 16, 42-350 Koziegłowy</p>
-            <p>Email: <a href="mailto:kontakt@alpaki.pl">kontakt@alpaki.pl</a></p>
-            <p>Telefon: +48 123 456 789</p>
-        </div>  
-    </section>
+        <div class="tab">
+            <div class="tab-content">
+                <h2>Alpaki</h2>
+                <p>Zapraszamy do naszego gospodarstwa, gdzie można zrelaksować się w towarzystwie alpak. Organizujemy spacery z alpakami, sesje zdjęciowe oraz warsztaty dla dzieci i dorosłych. To idealny sposób na chwilę relaksu blisko natury.</p>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="tab-content">
+                <h2>Kontakt</h2>
+                <p>Adres: Gęzyńska 16, 42-350 Koziegłowy</p>
+                <p>Email: <a href="mailto:kontakt@alpaki.pl" style="color: #ffb703">kontakt@alpaki.pl</a></p>
+                <p>Telefon: +48 123 456 789</p>
+                <p>Znajdź nas również na Facebooku i Instagramie!</p>
+            </div>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2024 Alpaki i Ceramika. Wszystkie prawa zastrzeżone.</p>
+        <p class="center"
+        >&copy; 2024 Alpaki i Ceramika. </p>
     </footer>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const navLinks = document.querySelectorAll('nav a');
+
+        function showTab(index) {
+            tabs.forEach((tab, i) => {
+                tab.classList.toggle('active', i === index);
+            });
+
+            navLinks.forEach((link, i) => {
+                link.classList.toggle('active', i === index);
+            });
+        }
+    </script>
 </body>
 </html>
