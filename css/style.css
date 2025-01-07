@@ -1,0 +1,238 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f4f8;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #264653, #2a9d8f);
+    padding: 20px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    height: 60px;
+    animation: bounce 1s ease-in-out infinite alternate;
+}
+
+nav .nav-links a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: #e76f51;
+    transform: scale(1.1);
+}
+
+.hero-section {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #264653, #2a9d8f, #e76f51);
+    color: #fff;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    animation: fadeInUp 2s ease-in-out 0.5s;
+}
+
+.hero-section .cta-button {
+    background: #e76f51;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    animation: fadeInUp 2s ease-in-out 1s;
+}
+
+.hero-section .cta-button:hover {
+    background: #f4a261;
+    transform: scale(1.05);
+}
+
+.about-us {
+    display: flex;
+    align-items: center;
+    padding: 80px 50px;
+    gap: 40px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.about-us .about-img {
+    flex: 1;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.about-us .about-img:hover {
+    transform: scale(1.05);
+}
+
+.about-us p {
+    flex: 1;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.products {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f4f4f4;
+}
+
+.products .product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.products .product-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.products .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.products .product-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.tab-content {
+    background-color: #fff;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 800px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+.alpaca {
+    position: absolute;
+    animation: jump 2s ease-in-out infinite;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    background: url('drawable/alpaca_icon.svg') no-repeat center center;
+    background-size: contain;
+    z-index: 10;
+}
+
+.navbar .back-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar .back-link:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav .nav-links a {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    .hero-section h1 {
+        font-size: 28px;
+    }
+
+    .products .product-card {
+        width: 100%;
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
