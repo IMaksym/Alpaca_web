@@ -10,7 +10,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #264653, #2a9d8f);
+    background: linear-gradient(135deg, #264653, #2a9d8f, #e76f51);
     padding: 20px 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -194,6 +194,72 @@ nav .nav-links a:hover {
 .navbar .back-link:hover {
     background-color: #fff;
     color: #333;
+}
+
+.contact-info {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(110deg, #264653, #2a9d8f, #e76f51);
+    color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact-info .card {
+    background-color: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info .card p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.contact-info .card a {
+    font-weight: 600;
+    text-decoration: none;
+    background: linear-gradient(135deg, #2a9d8f, #e76f51);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact-info .card a:hover {
+    background: linear-gradient(135deg, #e76f51, #264653);
+    transform: scale(1.05);
+}
+
+.visit-us .btn {
+    display: inline-block;
+    background-color: #e76f51;
+    color: #fff;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.visit-us .btn:hover {
+    background-color: #f4a261;
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
