@@ -1,57 +1,77 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ceramika - Majolika</title>
-
-    <link rel="stylesheet" href="css/aos.css">
-
-
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceramika - Majolika</title>
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav>
-        <img src="drawable/alpaca_icon.svg" alt="Majolika Logo" class="logo">
-        <div class="nav-links">
-            <a href="index.html">Strona Główna</a>
-            <a href="o_nas.html">O Nas</a>
-            <a href="ceramika.html">Ceramika</a>
-            <a href="alpaki.html">Alpaki</a>
-            <a href="kontakt.html">Kontakt</a>
+  <nav>
+    <img src="drawable/alpaca_icon.svg" alt="Majolika Logo" class="logo">
+    <div class="nav-links">
+      <a href="index.html">Strona Główna</a>
+      <a href="o_nas.html">O Nas</a>
+      <a href="ceramika.html">Ceramika</a>
+      <a href="alpaki.html">Alpaki</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+  </nav>
+
+  <header class="hero-section small-hero" data-aos="fade-up">
+    <h1>Ceramika</h1>
+  </header>
+
+  <section class="products" data-aos="fade-left">
+    <h2>Nasze Wyroby</h2>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="drawable/vaza.png" alt="Ceramika 1">
+        <h3>Unikalna Waza</h3>
+        <p>Ręcznie robiona z dbałością o każdy detal.</p>
+      </div>
+      <div class="single-plate-card">
+        <button class="arrow-btn" id="prev-btn">&#10094;</button>
+        <div class="plate-image-container">
+          <img id="plate-image" src="drawable/talerz1.png" alt="Talerz">
         </div>
-    </nav>
+        <h3 id="plate-title">Unikalna Talerz 1</h3>
+        <button class="arrow-btn" id="next-btn">&#10095;</button>
+      </div>
+      <div class="product-card">
+        <img src="drawable/talerz11.png" alt="Ceramika 2">
+        <h3>Talerz</h3>
+        <p>Idealna do dekoracji.</p>
+      </div>
+      
+    </div>
+    
+  </section>
 
-    <header class="hero-section small-hero" data-aos="fade-up">
-        <h1>Ceramika</h1>
-    </header>
+  <footer>
+    <p>&copy; 2025 Majolika. Wszystkie prawa zastrzeżone.</p>
+  </footer>
 
-    <section class="products" data-aos="fade-left">
-        <h2>Nasze Wyroby</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="drawable/vase.svg" alt="Ceramika 1">
-                <h3>Klasyczna Waza</h3>
-                <p>Ręcznie robiona z dbałością o każdy detal.</p>
-            </div>
-            <div class="product-card">
-                <img src="drawable/bolw.svg" alt="Ceramika 2">
-                <h3>Miseczka Artystyczna</h3>
-                <p>Idealna do dekoracji wnętrza.</p>
-            </div>
-            <div class="product-card">
-                <img src="drawable/plate.svg" alt="Ceramika 3">
-                <h3>Unikalna Talerz</h3>
-                <p>Wyjątkowy design dla wymagających.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Majolika. Wszystkie prawa zastrzeżone.</p>
-    </footer>
-
-    <script src="js/aos.js"></script>
-    <script src="js/animations.js"></script>
+  <script src="js/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+      AOS.init({duration:1000,easing:"ease-in-out",once:true});
+      const plates=[{img:"drawable/talerz1.png",title:"Unikalna Talerz"},{img:"drawable/talerz2.png",title:"Unikalna Talerz"},
+      {img:"drawable/talerz3.png",title:"Unikalna Talerz"},
+      {img:"drawable/talerz4.png",title:"Unikalna Talerz"},];
+      
+      let i=0;
+      const plateImage=document.getElementById("plate-image");
+      const plateTitle=document.getElementById("plate-title");
+      const prevBtn=document.getElementById("prev-btn");
+      const nextBtn=document.getElementById("next-btn");
+      function updatePlate(){plateImage.src=plates[i].img;plateTitle.textContent=plates[i].title;}
+      prevBtn.addEventListener("click",()=>{i--;if(i<0){i=plates.length-1}updatePlate();});
+      nextBtn.addEventListener("click",()=>{i++;if(i>=plates.length){i=0}updatePlate();});
+      updatePlate();
+    });
+  </script>
 </body>
 </html>
