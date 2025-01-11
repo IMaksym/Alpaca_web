@@ -6,6 +6,114 @@
   <title>Ceramika - Majolika</title>
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #264653, #2a9d8f, #e76f51);
+      padding: 20px 40px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      height: 60px;
+    }
+
+    nav .nav-links a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 120px 20px;
+      background: linear-gradient(135deg, #264653, #2a9d8f, #e76f51);
+      color: #fff;
+    }
+
+    .products {
+      text-align: center;
+      padding: 60px 10px;
+      background-color: #f4f4f4;
+    }
+
+    .products h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+    .product-grid 
+    {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 30px; 
+    justify-items: center;
+    }
+
+    .product-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 200px; 
+  height: 300px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+  max-width: 90%; 
+  max-height: 90%;
+  object-fit: contain; 
+}
+.product-name {
+  margin-top: 5px;
+  background: linear-gradient(135deg, #264653, #2a9d8f, #e76f51);
+  color: #fff;
+  font-size: 14px; 
+  font-weight: 600;
+  padding: 8px 0; 
+  text-align: center;
+  width: 200px; 
+  border-radius: 0 0 15px 15px;
+}
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+
+    footer p {
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+      padding: 20px 0;
+    }
+  </style>
 </head>
 <body>
   <nav>
@@ -25,52 +133,96 @@
   <section class="products" data-aos="fade-left">
     <h2>Nasze Wyroby</h2>
     <div class="product-grid">
-      <div class="product-card">
-        <img src="drawable/vaza.png" alt="Ceramika 1">
-        <h3>Unikalna Waza</h3>
-        <p>Ręcznie robiona z dbałością o każdy detal.</p>
+
+      <div class="product-container">
+        <div class="product-card">
+          <img id="vase-image" src="drawable/vasa22.png" alt="Waza">
+        </div>
+        <div class="product-name" id="vase-title">Ognista Harmonia</div>
       </div>
-      <div class="single-plate-card">
-        <div class="plate-image-container">
+
+      
+      <div class="product-container">
+        <div class="product-card">
           <img id="plate-image" src="drawable/talerz1.png" alt="Talerz">
         </div>
-        <h3 id="plate-title">Unikalna Talerz 1</h3>
+        <div class="product-name" id="plate-title">Łąka Wspomnień</div>
       </div>
-      <div class="product-card">
-        <img src="drawable/talerz11.png" alt="Ceramika 2">
-        <h3>Talerz</h3>
-        <p>Idealna do dekoracji.</p>
+
+      <div class="product-container">
+        <div class="product-card">
+          <img src="drawable/vaza.png" alt="Ceramika 1">
+        </div>
+        <div class="product-name">Kosmiczna Głębia</div>
       </div>
+
+
+      <div class="product-container">
+        <div class="product-card">
+          <img src="drawable/talerz222.png" alt="Ceramika 2">
+        </div>
+        <div class="product-name">Lazurowe Fale</div>
+      </div>
+
+      <div class="product-container">
+        <div class="product-card">
+          <img src="drawable/talerz11.png" alt="Ceramika 2">
+        </div>
+        <div class="product-name">Kwiatowa Elegancja
+        </div>
+      </div>
+
+      <div class="product-container">
+        <div class="product-card">
+          <img src="drawable/glecz.png" alt="Ceramika 2">
+        </div>
+        <div class="product-name">Ziemska Forma
+        </div>
+      </div>
+      
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Majolika. Wszystkie prawa zastrzeżone.</p>
+    <p>&copy; 2025 Majolika. Wszystkie права зastrzeżone.</p>
   </footer>
 
   <script src="js/aos.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded",()=>{
-      AOS.init({duration:1000,easing:"ease-in-out",once:true});
-      const plates=[
-        {img:"drawable/talerz1.png",title:"Unikalna Talerz "},
-        //{img:"drawable/talerz2.png",title:"Unikalna Talerz "},
-        {img:"drawable/talerz3.png",title:"Unikalna Talerz "},
-        {img:"drawable/talerz4.png",title:"Unikalna Talerz "}
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
+
+      const plates = [
+        { img: "drawable/talerz1.png", title: "Łąka Wspomnień " },
+        { img: "drawable/talerz3.png", title: "Łąka Wspomnień " },
+        { img: "drawable/talerz4.png", title: "Łąka Wspomnień " },
       ];
-      let i=0;
-      const plateImage=document.getElementById("plate-image");
-      const plateTitle=document.getElementById("plate-title");
-      function updatePlate(){
-        plateImage.src=plates[i].img;
-        plateTitle.textContent=plates[i].title;
-      }
-      setInterval(()=>{
-        i++;
-        if(i>=plates.length){i=0;}
-        updatePlate();
-      },500);
-      updatePlate();
+      
+      let i = 0;
+      const plateImage = document.getElementById("plate-image");
+      const plateTitle = document.getElementById("plate-title");
+
+      setInterval(() => {
+        i = (i + 1) % plates.length;
+        plateImage.src = plates[i].img;
+        plateTitle.textContent = plates[i].title;
+      }, 800);
+
+      const vases = [
+        { img: "drawable/vasa22.png", title: "Ognista Harmonia " },
+        { img: "drawable/vasa23.png", title: "Ognista Harmonia " },
+        { img: "drawable/vasa24.png", title: "Ognista Harmonia " },
+      ];
+      
+      let j = 0;
+      const vaseImage = document.getElementById("vase-image");
+      const vaseTitle = document.getElementById("vase-title");
+
+      setInterval(() => {
+        j = (j + 1) % vases.length;
+        vaseImage.src = vases[j].img;
+        vaseTitle.textContent = vases[j].title;
+      }, 800);
     });
   </script>
 </body>
