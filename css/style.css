@@ -1,5 +1,7 @@
+
+
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Serif', sans-serif;
     margin: 0;
     padding: 0;
     background: #f0f4f8;
@@ -10,7 +12,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #264653, #2a9d8f, #e76f51);
+    background: linear-gradient(-320deg, #dda46f, #80554e, #4f4657);
     padding: 20px 40px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     position: sticky;
@@ -41,7 +43,7 @@ body {
   .hero-section {
     text-align: center;
     padding: 120px 20px;
-    background: linear-gradient(135deg, #264653, #2a9d8f, #e76f51);
+    background: linear-gradient(-320deg, #dda46f, #80554e, #4f4657);
     color: #fff;
     position: relative;
     background-size: cover;
@@ -82,7 +84,6 @@ body {
     transform: scale(1.05);
   }
   
-  /* --- Блок "O Nas" --- */
   .about-section {
     display: flex;
     flex-wrap: wrap;
@@ -190,7 +191,7 @@ body {
   .contact-info {
     text-align: center;
     padding: 50px 20px;
-    background: linear-gradient(110deg, #264653, #2a9d8f, #e76f51);
+    background: linear-gradient(-320deg, #dda46f, #80554e, #4f4657);
     color: #fff;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
@@ -223,7 +224,7 @@ body {
   .contact-info .card a {
     font-weight: 600;
     text-decoration: none;
-    background: linear-gradient(135deg, #2a9d8f, #e76f51);
+    background: linear-gradient(-320deg, #dda46f, #80554e, #4f4657);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -231,7 +232,7 @@ body {
   }
   
   .contact-info .card a:hover {
-    background: linear-gradient(135deg, #e76f51, #264653);
+    background: linear-gradient(-320deg, #dda46f, #80554e, #4f4657);
     transform: scale(1.05);
   }
   
@@ -269,7 +270,7 @@ body {
     transform: translateX(-50%);
     width: 80%;
     height: 2px;
-    background: linear-gradient(135deg, #2a9d8f, #e76f51);
+    background: linear-gradient(-320deg, #dda46f, #80554e, #4f4657);
   }
   
   @media (max-width:768px){
