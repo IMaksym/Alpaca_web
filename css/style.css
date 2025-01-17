@@ -253,7 +253,6 @@ body {
     transform: scale(1.05);
   }
   
-  /* --- Footer --- */
   footer p {
     position: relative;
     font-size: 1.2rem;
@@ -326,7 +325,6 @@ body {
     100% {transform: translateY(0);}
   }
   
-  /* --- Karta z jedną tarczą (opcjonalnie, jeśli нужна) --- */
   .single-plate-card {
     position: relative;
     width: 300px;
