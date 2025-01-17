@@ -287,54 +287,101 @@ body {
   .social-icon:hover {
     transform: scale(1.1); 
   }
-  .gallery-section {
-    position: relative;
-    margin-top: 50px; 
-    height: 400px;   
-    overflow: hidden; 
+
+
+  
+
+
+
+
+
+
+
+.flip-container {
+  
+  perspective: 1000px;
+  display: inline-block; 
+  cursor: pointer;       
+}
+
+.flip-card {
+  position: relative;
+  width: 400px;    
+  height: 500px;  
+  transform-style: preserve-3d; 
+  transition: transform 0.8s ease;
+}
+
+.flip-container.flipped .flip-card {
+  transform: rotateY(180deg);
+}
+
+.flip-card .front,
+.flip-card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden; 
+}
+
+.flip-card .front {
+  z-index: 2; 
+
+}
+
+.flip-card .back {
+  transform: rotateY(180deg);
+}
+
+.flip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.click-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 24px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
   }
-  
-  .photo-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
   }
-  
-  .photo-container img {
-    position: absolute;
-    bottom: 0;         
-    width: 300px;      
-    height: auto;
-    object-fit: cover; 
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
   }
-  
-  .photo-left {
-    left: 10%;  
-    animation: swapLeft 6s infinite ease-in-out;
-  }
-  
-  .photo-right {
-    right: 10%; 
-    animation: swapRight 6s infinite ease-in-out;
-  }
-  
-  @keyframes swapLeft {
-    0%   { left: 10%; }
-    25%  { left: 10%; }
-    50%  { left: 60%; } 
-    75%  { left: 60%; }
-    100% { left: 10%; }
-  }
-  
-  
-  @keyframes swapRight {
-    0%   { right: 10%; }
-    25%  { right: 10%; }
-    50%  { right: 60%; } 
-    75%  { right: 60%; }
-    100% { right: 10%; } 
-  }
-  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   @media (max-width:768px){
     nav {
