@@ -22,7 +22,6 @@ body {
   
   nav .logo {
     height: 60px;
-    animation: bounce 1s ease-in-out infinite alternate;
   }
   
   nav .nav-links a {
@@ -272,6 +271,25 @@ body {
     height: 2px;
     background: linear-gradient(-320deg, #dda46f, #80554e, #4f4657);
   }
+
+  .social-icons {
+    
+    display: flex;
+    gap: 20px; 
+    margin-top: 20px; 
+    justify-content: center;
+  }
+  
+  .social-icon {
+    width: 32px;  
+    height: 32px;
+    transition: transform 0.2s;
+  }
+  
+  .social-icon:hover {
+    transform: scale(1.1); 
+  }
+  
   
   @media (max-width:768px){
     nav {
