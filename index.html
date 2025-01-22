@@ -5,15 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Majolika - Strona Główna</title>
-
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden; 
+    height: 100vh; 
+}
+        body.show-scroll {
+            overflow: auto; 
+            height: auto;
+        }
+        .intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .alpaca-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .alpaca {
+            width: 150px;
+            height: auto;
+            position: absolute;
+            transition: transform 1.5s ease, opacity 1.5s ease;
+        }
+        .alpaca.left {
+            transform: translateX(-50%);
+        }
+        .alpaca.right {
+            transform: translateX(50%);
+        }
+        .intro-text {
+            font-size: 3rem;
+            color: #333;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+        .hidden {
+            display: none;
+        }
+        nav, header, section, footer {
+            opacity: 0;
+            transition: opacity 0.5s ease 0.5s;
+        }
+    </style>
 </head>
 <body>
+    <div class="intro">
+        <div class="alpaca-container">
+            <img src="drawable/0.png" alt="Alpaca Left" class="alpaca left">
+            <div class="intro-text">Witamy w Majolika</div>
+            <img src="drawable/00.png" alt="Alpaca Right" class="alpaca right">
+        </div>
+    </div>
+
     <nav>
-        <img src="drawable/1logo.png" alt="Majolika Logo" class="logo" >
+        <img src="drawable/1logo.png" alt="Majolika Logo" class="logo">
         <div class="nav-links">
             <a href="index.html">Strona Główna</a>
             <a href="o_nas.html">O Nas</a>
@@ -26,36 +88,45 @@
         <h1>Majolika</h1>
         <p>Przeżyj magię natury i piękna ceramiki w naszym wyjątkowym miejscu!</p>
         <a href="o_nas.html" class="cta-button">Dowiedz się więcej</a>
-        
-
-
-  
-
     </header>
-
-    
-    
-    <section class="about-us" data-aos="fade-left">
-    </section>
-
-   
-
-   
 
     <footer>
         <p>&copy; 2025 Majolika. Wszystkie prawa zastrzeżone.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            AOS.init({
-                duration: 1000,
-                easing: 'ease-in-out',
-                once: true
-            });
-        });
+document.addEventListener("DOMContentLoaded", () => {
+    const leftAlpaca = document.querySelector('.alpaca.left');
+    const rightAlpaca = document.querySelector('.alpaca.right');
+    const introText = document.querySelector('.intro-text');
+    const intro = document.querySelector('.intro');
+    const mainContent = document.querySelectorAll('nav, header, section, footer');
+    const body = document.body;
+
+    setTimeout(() => {
+        leftAlpaca.style.transform = 'translateX(-300%)';
+        rightAlpaca.style.transform = 'translateX(300%)';
+        introText.style.opacity = '1';
+    }, 500);
+
+    setTimeout(() => {
+        introText.style.opacity = '0';
+    }, 2500);
+
+    setTimeout(() => {
+        intro.style.display = 'none';
+        mainContent.forEach(el => el.style.opacity = '1');
+        body.classList.add('show-scroll'); 
+    }, 3000);
+
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true
+    });
+});
+
     </script>
 </body>
 </html>
