@@ -199,8 +199,8 @@ nav .nav-links a:hover {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.product-card h3, .product-card p {
-  min-height: 50px;
+.product-card h3, .product-card p { /* moje kwalifikacje  */
+  min-height: 14px;
   margin: 10px 0;
   text-align: center;
 }
