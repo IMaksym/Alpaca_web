@@ -9,10 +9,6 @@
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
-
-
-
-
     nav .logo {
       height: 60px;
     }
@@ -27,13 +23,11 @@
         #8fc9e6 40%, 
         #269cbc 70%, 
         #062f47 100%
-    );
+      );
       font-weight: 600;
       font-size: 18px;
       letter-spacing: 1px;
     }
-
- 
 
     .products {
       text-align: center;
@@ -45,12 +39,12 @@
       font-size: 2.5rem;
       margin-bottom: 40px;
     }
-    .product-grid 
-    {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 30px; 
-    justify-items: center;
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 30px; 
+      justify-items: center;
     }
 
     .product-container {
@@ -60,35 +54,42 @@
     }
 
     .product-card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 200px; 
-  height: 300px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 200px; 
+      height: 300px; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.product-card img {
-  max-width: 90%; 
-  max-height: 90%;
-  object-fit: contain; 
-}
-.product-name {
-  margin-top: 5px;
-  background: linear-gradient(90deg,#fdba08 20%,#8fc9e6 40%,#269cbc 70%,#062f47 100%);
-  color: #fff;
-  font-size: 14px; 
-  font-weight: 600;
-  padding: 8px 0; 
-  text-align: center;
-  width: 200px; 
-  border-radius: 0 0 15px 15px;
-}
+    .product-card img {
+      max-width: 90%; 
+      max-height: 90%;
+      object-fit: contain; 
+    }
+
+    .product-name {
+      margin-top: 5px;
+      background: linear-gradient(90deg, 
+    #fa8900 0%, 
+    #fdba08 20%, 
+    #8fc9e6 40%, 
+    #269cbc 60%, 
+    #062f47 80%);
+  background-size: 200% 100%; 
+  animation: smoothFlow 12s ease-in-out infinite;      color: #fff;
+      font-size: 14px; 
+      font-weight: 600;
+      padding: 8px 0; 
+      text-align: center;
+      width: 200px; 
+      border-radius: 0 0 15px 15px;
+    }
 
     .product-card:hover {
       transform: translateY(-10px);
@@ -101,6 +102,44 @@
       color: #333;
       padding: 20px 0;
     }
+
+    .icons-section {
+    text-align: center;
+    padding: 20px 10px; 
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+  }
+  
+  .icon-circle {
+    width: 80px; /* Smaller size */
+    height: 80px; /* Smaller size */
+    background-color: #444;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .icon-circle img {
+    width: 100%; /* Adjusted icon size */
+        height: auto;
+  }
+  
+  .text-container {
+    text-align: center;
+    font-size: 18px; /* Smaller text */
+  }
+  
+  .heading {
+    font-size: 20px; /* Smaller heading */
+  }
   </style>
 </head>
 <body>
@@ -119,18 +158,31 @@
     <p>W moim gospodarstwie możecie zbliżyć się do natury w jej najczystszej postaci. Oferuję takie zajęcia jak warsztaty ceramiczne, warsztaty tematyczne oraz zajęcia terapeutyczne, przez które, dzięki swojemu wykształceniu, przeprowadzę Was najlepiej jak potrafię. Animaloterapia, która jest jedną z najbardziej skutecznych i naturalnych metod terapeutycznych, korzystnie wpływa na ludzi, obniżając poziom stresu.</p>
   </header>
 
+  
+  <section class="icons-section" data-aos="fade-left">
+    <div class="icon-container">
+      <div class="icon-circle">
+        <img src="drawable/ico/vasa_ico.png" alt="" />
+      </div>
+      <div class="text-container">
+        <h3 class="heading">Warsztaty ceramiczne</h3>
+        <p>Idealna propozycja zarówno dla dorosłych, jak i dla dzieci od 5-6 roku życia. Praca z gliną wpływa i rozwija zdolności manualne, pomaga w odprężeniu, uczy skupiania uwagi na procesie, który jest wykonywany, a te umiejętności, szczególnie w przypadku dzieci, przydają się później w życiu codziennym. Na cyklicznych spotkaniach warsztatowych uczestnicy poznają kolejne etapy tworzenia prac m.in. lepienie, wypalanie czy szkliwienie. Dorośli mogą skorzystać z warsztatów tradycyjnych lub z widowiskowego maratonu raku. Uczestnicy wszystkich warsztatów otrzymują niezbędne materiały, narzędzia pracy, a gotowe prace zabierają ze sobą do domu.</p>
+      </div>
+    </div>
+  </section>
+
+
   <section class="products" data-aos="fade-left">
     <h2>Nasze Wyroby</h2>
     <div class="product-grid">
-
       <div class="product-container">
         <div class="product-card">
           <img id="vase-image" src="drawable/vasa22.png" alt="Waza">
         </div>
         <div class="product-name" id="vase-title">Ognista Harmonia</div>
       </div>
+  
 
-      
       <div class="product-container">
         <div class="product-card">
           <img id="plate-image" src="drawable/talerz1.png" alt="Talerz">
@@ -145,7 +197,6 @@
         <div class="product-name">Kosmiczna Głębia</div>
       </div>
 
-
       <div class="product-container">
         <div class="product-card">
           <img src="drawable/talerz222.png" alt="Ceramika 2">
@@ -157,23 +208,81 @@
         <div class="product-card">
           <img src="drawable/talerz11.png" alt="Ceramika 2">
         </div>
-        <div class="product-name">Kwiatowa Elegancja
-        </div>
+        <div class="product-name">Kwiatowa Elegancja</div>
       </div>
 
       <div class="product-container">
         <div class="product-card">
           <img src="drawable/glecz.png" alt="Ceramika 2">
         </div>
-        <div class="product-name">Ziemska Forma
-        </div>
+        <div class="product-name">Ziemska Forma</div>
       </div>
-      
     </div>
   </section>
 
+  <section class="icons-section" data-aos="fade-left">
+    <div class="icon-container">
+      <div class="icon-circle">
+        <img src="drawable/ico/pensel_ico.png" alt="" />
+      </div>
+      <div class="text-container">
+        <h3 class="heading">Warsztaty tematyczne</h3>
+        <p>Bogata oferta warsztatów tematycznych to doskonała okazja, by odkryć różnorodne techniki tworzenia, przekształcania i upiększania przedmiotów. Uczestnicy mają możliwość spróbowania swoich sił w takich dziedzinach jak decoupage, quilling, makrama, scrapbooking czy recykling. Różnorodność proponowanych zajęć pozwala na pracę z różnymi materiałami, takimi jak papier, drewno osikowe czy filc, co daje szansę na znalezienie swojej ulubionej techniki lub na stałe rozwijanie umiejętności w jednej z nich. Można również zdecydować się na eksplorowanie nowych form rękodzieła podczas każdego spotkania, dzięki czemu każde warsztaty stają się wyjątkowym doświadczeniem. Zajęcia te nie tylko rozwijają kreatywność, ale także pozytywnie wpływają na rozwój fizyczny, psychiczny i społeczny. Praca z rękodziełem usprawnia motorykę małą i dużą, poprawia zdolności manualne, a także uczy skupienia, cierpliwości i systematyczności. To również idealny sposób na relaks i redukcję stresu – twórcza praca pozwala oderwać się od codziennych obowiązków i problemów, przynosząc odprężenie oraz wewnętrzny spokój. Dodatkowo warsztaty tematyczne to świetna okazja do spotkania z innymi ludźmi o podobnych zainteresowaniach. Wspólne tworzenie sprzyja budowaniu relacji, poprawia nastrój i dostarcza energii do podejmowania nowych wyzwań w codziennym życiu.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="icons-section" data-aos="fade-left">
+    <div class="icon-container">
+      <div class="icon-circle">
+        <img src="drawable/ico/serce_ico.png" alt="Icon" />
+      </div>
+      <div class="text-container">
+        <h3 class="heading">Zajęcia Terapeutyczne</h3>
+        <p>
+          Zainteresowani zajęciami terapeutycznymi mogą wybierać spośród takich,
+          które spełniają różne funkcje, obejmują różne obszary działania, mają
+          różny charakter. Stanowią pewną formę „rehabilitacji", której celem jest
+          zwiększenie sprawności manualnej, intelektualnej, fizycznej, itd. Udział w
+          zajęciach terapeutycznych, w zależności od wybranej opcji, uczy pracy
+          zespołowej, integruje, rozwija artystycznie i ruchowo, rozwija wrażliwość i
+          wyobraźnię, a nawet buduje poczucie własnej wartości.
+        </p>
+        <ul>
+          <li>Arteterapia, terapia przez sztukę;</li>
+          <li>Socjoterapia, zajęcia wspierające rozwój umiejętności społecznych i integrację;</li>
+          <li>Terapia ręki, dedykowana osobom z trudnościami grafomotorycznymi;</li>
+          <li>Sensoplastyka, twórcza forma terapii angażująca wszystkie zmysły;</li>
+          <li>TUS (Trening Umiejętności Społecznych), rozwijające praktyczne kompetencje społeczne;</li>
+          <li>Silwoterapia, terapia natury, korzystanie z uspokajającego wpływu drzew;</li>
+          <li>Animaloterapia, kontakt ze zwierzętami, redukcja stresu i poprawa nastroju.</li>
+        </ul>
+        <p>
+          Cel terapeutyczny zakłada stworzenie sytuacji, aby osoba mogła rozwijać się w
+          formie ekspresyjnej, percepcyjnej, harmonizować rozwój i funkcjonowanie swojej
+          osobowości, przezwyciężając osobiste trudności. Autoekspresja poprzez twórczość
+          plastyczną jest jednocześnie samorealizacją, zaspokajaniem potrzeb estetycznych,
+          a także terapią i kompensacją. Realizacja tych potrzeb wpływa na
+          dobre samopoczucie, osłabienie wewnętrznych konfliktów.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
   <footer>
-    <p>&copy; 2025 Majolika. Wszystkie prawa зastrzeżone.</p>
+    <p>&copy; 2025 Majolika. Wszystkie prawa zastrzeżone.</p>
   </footer>
 
   <script src="js/aos.js"></script>
