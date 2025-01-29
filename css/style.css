@@ -293,7 +293,6 @@ nav .nav-links a:hover {
 }
 
 .contact-info .card a:hover {
-  background: linear-gradient(-320deg, #dda46f, #80554e, #4f4657);
   transform: scale(1.05);
 }
 
